@@ -7,13 +7,13 @@ from .models import items # to retrieve the data that are present in model
 
 def index (request) :
     lst = items.objects.all()
-    template = loader.get_template('./index.html')
+    # template = loader.get_template('./index.html') No need if using render method
     context = { # whatever data you have obtain from DB , you can send using context to browser/frontend.
     'itemList' : lst,  # 'itemList' will work as a key which store all objects. means equavalent to lst above.
        }
 
-    return HttpResponse(template.render(context,request)) # working but its better to use render 
-    # return render(request, './index.html',context)
+    # return HttpResponse(template.render(context,request)) # working but its better to use render 
+    return render(request, './index.html',context)
     # return HttpResponse("<h1> hello Noor Home </h1>")
 
 def about (request) :
