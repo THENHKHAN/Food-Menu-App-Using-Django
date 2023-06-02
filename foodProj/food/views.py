@@ -27,3 +27,9 @@ def listItems (request) :
     
 def passVar (request) : # thsi is how to pass variable
     return render(request,"./index.html" , {'first_name': 'Noor', 'last_name': 'KHAN'})
+
+
+def detail(request,item_id) :
+    #  when user click on any item it will direct to this detail URL/route.By id they will be differenctiated.
+    return HttpResponse(f"This is item no/id {item_id}")
+
