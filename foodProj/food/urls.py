@@ -13,6 +13,6 @@ urlpatterns = [
 #    /food/passVar/
     path('passVar/',views.passVar , name="passVar" ), 
 #  
-#   /food/1 or 2 or 3 whatever id you have. The id will come dynamically/by iser choic. According to that item with of respective id display on detail view 
+#   /food/1 or 2 or 3 whatever id you have. The id will come dynamically/by user choic(either by URL box by user or through link). According to that item with of respective id display on detail view 
     path('<int:item_id>',views.detail , name="detail" ), 
 ]

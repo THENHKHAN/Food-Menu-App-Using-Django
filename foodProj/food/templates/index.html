@@ -20,7 +20,10 @@
 
     {% for item in itemList %}
     <ul>
-        <li> {{ item.id }} -- {{ item.item_name }} <!--  we're accessing them by their name. -->
+        <li>
+            <!-- EX: <a href="/food/id">{{ item.id }} -- {{ item.item_name }}</a> When we click, id of respective item will be passsed in the link url.-->
+            <a href="/food/{{ item.id }}">{{ item.id }} -- {{ item.item_name }}</a>
+            <!--  we're accessing them by their id and their name. -->
         </li>
     </ul>
 

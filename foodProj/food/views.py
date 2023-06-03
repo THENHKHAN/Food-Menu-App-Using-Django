@@ -33,12 +33,11 @@ def passVar (request) : # thsi is how to pass variable
 def detail(request,item_id) :
     #  when user click on any item it will direct to this detail URL/route.By id they will be differenctiated.
     # in this we need only that object whose id matched that's y we don't use   items.objects.all() beacuse we  need desire id.
-    item = items.objects.get(pk=item_id) # pk is primary key
-    print(f"item: {item}")
+    item = items.objects.get(pk=item_id) # pk is primary key send through router
     context ={
 
-    "item" : item, # this the above variable
-    }
-
+    "item" : item, # this the above variable i.e. the object whose id is matching.
+    }# item will will be passed as an object through context.
+#we're going to get only that object whose id is primary key.
     # return HttpResponse(f"This is item no/id {item_id}")
     return render(request, './detail.html' , context)

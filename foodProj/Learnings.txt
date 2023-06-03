@@ -1,0 +1,20 @@
+
+*************** About QuerySet: and many more ****************
+https://docs.djangoproject.com/en/4.2/topics/db/queries/
+
+Retrieving objects¶
+To retrieve objects from your database, construct a QuerySet via a Manager on your model class.
+
+A QuerySet represents a collection of objects from your database. It can have zero, one or many filters. Filters narrow down the query results based on the given parameters. In SQL terms, a QuerySet equates to a SELECT statement, and a filter is a limiting clause such as WHERE or LIMIT.
+
+You get a QuerySet by using your model’s Manager. Each model has at least one Manager, and it’s called objects by default. Access it directly via the model class.
+The Manager is the main source of QuerySets for a model. For example, Blog.objects.all() returns a QuerySet that contains all Blog objects in the database.
+
+**---> Retrieving a single object with get()¶
+filter() will always give you a QuerySet, even if only a single object matches the query - in this case, it will be a QuerySet containing a single element.
+
+If you know there is only one object that matches your query, you can use the 
+get() method on a Manager which returns the object directly:
+
+>>> one_entry = Entry.objects.get(pk=1)
+You can use any query expression with get(), just like with filter() .
