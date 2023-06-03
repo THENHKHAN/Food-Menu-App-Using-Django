@@ -12,23 +12,41 @@
 <p> <- By using DTL for loop-></p>
 {% endblock BasicHomePage %}
 
-{% block itemList %}
+{% block body %}
 
 {% for item in itemList %}
-<ul>
-    <li class="nav-link">
-        <!-- EX: <a href="/food/id">{{ item.id }} -- {{ item.item_name }}</a> When we click, id of respective item will be passsed in the link url.-->
-        <!-- <a href="/food/{{ item.id }}">{{ item.id }} -- {{ item.item_name }}</a> -->
-        <a href="{% url 'food:detail' item.id %}"> {{ item.id }} -- {{ item.item_name }} </a>
-        <!--  we're accessing them by their id and their name. -->
-        <!-- /food/{{ item.id }} === 'detail' item.id  NOW this whole become Dynamic url
-            HERE 'detail' is the NAME of url presnent in food app urls.py detail-->
-    </li>
-</ul>
-<!-- /food/{{ item.id }} :{{ item.id }}  is dynamic But whole is called hardcoded URL-->
-{% endfor %}
 
-{% endblock itemList %}
+<div class="row">
+    <div class="col-md-3 offset-md-2">
+        <img src="{{ item.item_img  }}" alt="img" height="150px">
+    </div>
+    <div class="col-md-3">
+        <h3>{{ item.item_name }}</h3>
+        <h5>{{ item.item_desc }}</h5>
+        <h6>${{ item.item_price }}</h6>
+    </div>
+    <div class="col-md-3">
+        <a href="/food/{{ item.id }}" class="btn btn-success">Details </a>
+        <!-- <button type="button" class="btn btn-success" href="/food/{{ item.id }}"> </button> -->
+    </div>
+
+</div>
+{% endfor %}
+{% endblock body %}
+
+<!-- old code -->
+<!-- <li class="nav-link"> -->
+<!-- EX: <a href="/food/id">{{ item.id }} -- {{ item.item_name }}</a> When we click, id of respective item will be passsed in the link url.-->
+<!-- <a href="/food/{{ item.id }}">{{ item.id }} -- {{ item.item_name }}</a> -->
+<!-- <a href="{% url 'food:detail' item.id %}"> {{ item.id }} -- {{ item.item_name }} </a> -->
+<!--  we're accessing them by their id and their name. -->
+<!-- /food/{{ item.id }} === 'detail' item.id  NOW this whole become Dynamic url
+            HERE 'detail' is the NAME of url presnent in food app urls.py detail-->
+<!-- </li> -->
+<!-- </ul> -->
+<!-- /food/{{ item.id }} :{{ item.id }}  is dynamic But whole is called hardcoded URL-->
+
+
 
 
 {% block fnameLname %}
