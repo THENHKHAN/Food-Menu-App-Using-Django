@@ -2,9 +2,19 @@
 
 
 {% block detailItems %}
-<h1> {{ item.item_name }}</h1> <!-- here item is object and item_name is property from the class i.e. db -->
 
-<h2>{{item.item_desc}}</h2>
-<h2>{{item.item_price}}</h2>
+<div class="row">
+
+    <div class="col-md-6">
+        <img src="{{item.item_img}}" alt="img" height="470px">
+    </div>
+
+    <div class="col-md-6">
+        <h2> {{ item.item_name }}</h2> <!-- here item is object and item_name is property from the class i.e. db -->
+        <h4>{{item.item_desc}}</h4>
+        <h6>${{item.item_price}}</h6>
+    </div>
+
+</div>
 
 {% endblock detailItems %}
