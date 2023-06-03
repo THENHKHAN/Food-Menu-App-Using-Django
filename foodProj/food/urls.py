@@ -2,6 +2,8 @@
 
 from django.urls import path
 from . import views
+ 
+app_name = "food" # for namespacing the url
 urlpatterns = [
     #  macthcing url from proj url to app or this app urls to route
     #    /food/
