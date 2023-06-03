@@ -34,8 +34,10 @@ def detail(request,item_id) :
     #  when user click on any item it will direct to this detail URL/route.By id they will be differenctiated.
     # in this we need only that object whose id matched that's y we don't use   items.objects.all() beacuse we  need desire id.
     item = items.objects.get(pk=item_id) # pk is primary key send through router
-    context ={
 
+# If you know there is only one object that matches your query, you can use the   get() method on a Manager which returns the object directly    
+
+    context ={
     "item" : item, # this the above variable i.e. the object whose id is matching.
     }# item will will be passed as an object through context.
 #we're going to get only that object whose id is primary key.

@@ -22,11 +22,14 @@
     <ul>
         <li>
             <!-- EX: <a href="/food/id">{{ item.id }} -- {{ item.item_name }}</a> When we click, id of respective item will be passsed in the link url.-->
-            <a href="/food/{{ item.id }}">{{ item.id }} -- {{ item.item_name }}</a>
+            <!-- <a href="/food/{{ item.id }}">{{ item.id }} -- {{ item.item_name }}</a> -->
+            <a href="{% url 'detail' item.id %}"> {{ item.id }} -- {{ item.item_name }} </a>
             <!--  we're accessing them by their id and their name. -->
+            <!-- /food/{{ item.id }} === 'detail' item.id  NOW this whole become Dynamic url
+            HERE 'detail' is the NAME of url presnent in food app urls.py detail-->
         </li>
     </ul>
-
+    <!-- /food/{{ item.id }} :{{ item.id }}  is dynamic But whole is called hardcoded URL-->
     {% endfor %}
 
     {{first_name}} <br>
