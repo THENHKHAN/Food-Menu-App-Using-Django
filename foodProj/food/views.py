@@ -57,3 +57,19 @@ def create_item(request) :
  
     return render(request,'./item_form.html',{"form":form} ) # if form is not valid then render on item_form.html in templates
 
+# updating
+
+def  update_item (request,id) :
+    item = items.objects.get(id=id)
+    form = itemForm(request.POST or None , instance = item) #instance = item so that field data already present in input box.
+
+    if form.is_valid() :
+        form.save()
+        return redirect("food:homePage")
+    context = {
+            "form" : form ,
+        }
+    return render(request , "./item_form.html " , context)
+
+
+

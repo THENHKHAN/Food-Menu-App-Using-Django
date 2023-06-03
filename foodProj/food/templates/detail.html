@@ -13,6 +13,7 @@
         <h2> {{ item.item_name }}</h2> <!-- here item is object and item_name is property from the class i.e. db -->
         <h4>{{item.item_desc}}</h4>
         <h6>${{item.item_price}}</h6>
+        <a href="{% url 'food:update_item' item.id %}" class="btn btn-primary">Update</a>
     </div>
 
 </div>
