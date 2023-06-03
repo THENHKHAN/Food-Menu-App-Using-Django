@@ -1,0 +1,12 @@
+{% extends "./base.html" %}
+
+{% block body %}
+<form method="POST">
+
+    {% csrf_token %}
+
+    {{ form }} <!--comming from create_item function from views.py-->
+    <button type="submit" class="btn btn-primary">Save</button>
+
+</form>
+{% endblock body %}

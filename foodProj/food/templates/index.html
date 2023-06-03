@@ -26,7 +26,8 @@
         <h6>${{ item.item_price }}</h6>
     </div>
     <div class="col-md-3">
-        <a href="/food/{{ item.id }}" class="btn btn-success">Details </a>
+        <!--           'appName:urlName(in urlPatterns)' extraPara -->
+        <a href="{% url 'food:detail' item.id %}" class="btn btn-success">Details </a>
         <!-- <button type="button" class="btn btn-success" href="/food/{{ item.id }}"> </button> -->
     </div>
 
@@ -44,7 +45,7 @@
             HERE 'detail' is the NAME of url presnent in food app urls.py detail-->
 <!-- </li> -->
 <!-- </ul> -->
-<!-- /food/{{ item.id }} :{{ item.id }}  is dynamic But whole is called hardcoded URL-->
+<!-- /food/{{ item.id }} -> {{ item.id }}  is dynamic But whole is called hardcoded URL-->
 
 
 

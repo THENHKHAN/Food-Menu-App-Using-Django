@@ -1,8 +1,10 @@
-from django.shortcuts import render
+from django.shortcuts import render , redirect
 from django.http import HttpResponse
 from django.template import loader
+# relative import of forms
 from .models import items # to retrieve the data that are present in model
 # Create your views here.
+from .forms import itemForm
 
 
 def index (request) :
@@ -43,3 +45,15 @@ def detail(request,item_id) :
 #we're going to get only that object whose id is primary key.
     # return HttpResponse(f"This is item no/id {item_id}")
     return render(request, './detail.html' , context)
+
+def create_item(request) :
+    form = itemForm (request.POST or None) # creating instance of itemForm class
+
+    # now let's check whether field are valid or not
+
+    if form.is_valid() :
+        form.save() # if valid then save the form
+        return redirect('food:homePage') # where you wanna redirect after saving the form. 'food:index' === to go to index view/router. index is the function above.
+ 
+    return render(request,'./item_form.html',{"form":form} ) # if form is not valid then render on item_form.html in templates
+
