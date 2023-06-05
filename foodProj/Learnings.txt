@@ -18,3 +18,37 @@ get() method on a Manager which returns the object directly:
 
 >>> one_entry = Entry.objects.get(pk=1)
 You can use any query expression with get(), just like with filter() .
+
+
+  <<<------------------   Links I have Visited ----------------------->>>
+
+Some Project from here you can take Ref:  GitHub Repo:
+https://github.com/TanuShree952838
+https://github.com/farazkhanfk7?tab=repositories&q=django&type=&language=&sort=
+
+
+
+Links : for Crud Operations
+  --> https://plainenglish.io/blog/build-a-django-application-to-perform-crud-operations-5990ee90c24a
+
+
+  --> https://data-flair.training/blogs/django-crud-example/
+
+  --> https://blog.devgenius.io/crud-operation-in-django-ee9ea5087c55
+
+  --> https://studygyaan.com/django/django-crud-create-retrieve-update-delete-function-based-views
+
+  --> https://www.geeksforgeeks.org/django-crud-create-retrieve-update-delete-function-based-views/
+
+  --> https://towardsdatascience.com/build-a-django-crud-app-by-using-class-based-views-12bc69d36ab6
+
+  --> https://studygyaan.com/django
+
+
+Links : for authentications
+
+  --> https://plainenglish.io/blog/user-registration-and-login-authentication-in-django-2f3450479409
+
+  --> https://plainenglish.io/blog/how-to-build-your-own-login-and-registration-system-in-django
+
+--> https://studygyaan.com/django/how-to-use-built-in-login-and-logout-authentication-system-in-django
